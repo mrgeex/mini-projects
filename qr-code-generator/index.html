@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>QR-Code Generator</title>
+  </head>
+  <body class="flex container">
+    <div class="preferences">
+      <input type="color" class="light" value="#fff" />
+      <input type="color" class="dark" />
+      <select name="size" id="size">
+        <option value="100">100x100</option>
+        <option value="200">200x200</option>
+        <option value="300">300x300</option>
+        <option selected value="400">400x400</option>
+        <option value="500">500x500</option>
+        <option value="600">600x600</option>
+        <option value="700">700x700</option>
+        <option value="800">800x800</option>
+        <option value="900">900x900</option>
+      </select>
+    </div>
+    <input
+      type="text"
+      name="qrcode-value"
+      class="qrcode__value"
+      placeholder="Enter QR code value/url"
+    />
+    <img
+      class="qrcode"
+      src="download.svg"
+      alt="qrcode"
+      width="400"
+      height="400"
+    />
+    <div class="buttons">
+      <a href="" class="download">
+        <button class="btn flex">
+          <img src="download.svg" width="16" height="16" />
+          <span>Download</span>
+        </button>
+      </a>
+      <a href="" class="share">
+        <button class="btn flex">
+          <img src="share.svg" width="16" height="16" />
+          <span>Share</span>
+        </button>
+      </a>
+    </div>
+  </body>
+</html>
