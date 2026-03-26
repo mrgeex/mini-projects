@@ -1,0 +1,124 @@
+:root {
+    --main: #1c1e23;
+    --secondary: #181b29;
+    --border: #414866;
+    --text: #fff;
+    --text-secondary: #8b92b7;
+    --button: rgb(106, 43, 255)
+}
+
+* {
+    box-sizing: border-box;
+    border-radius: 25px;
+}
+
+body {
+    background: var(--main);
+}
+
+img{
+    border-radius: 0;
+}
+
+.container{
+    color: white;
+    /*border: 3px solid white;*/
+
+    flex-flow: column;
+    width: 500px !important;
+    gap: 15px;
+    padding: 8px;
+    margin: 15vh auto;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.preferences, .buttons {
+    justify-content: space-between;
+    width: 100%;
+    gap: 30px;
+}
+
+.preferences {
+    border: 1px solid var(--border);
+    padding: 8px;
+}
+
+.light, .dark{
+    border: none;
+
+    width: 32.5%;
+    height: 30px;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 25px;
+}
+
+.size, .size option{
+    color: var(--text);
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    outline: none;
+
+    padding: 3px;
+    width: 32.5%;
+    height: 30px;
+}
+
+.qrcode__value{
+    background: var(--secondary);
+    color: var(--text);
+    border: 1px solid var(--border);
+    outline: none;
+
+    width: 100%;
+    padding: 12px;
+}
+
+.qrcode__value::placeholder{
+    color: var(--text-secondary);
+}
+
+.qrcode{
+    border: 1px solid var(--border);
+
+    width: 100% !important;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.btn{
+    background: var(--button);
+    color: var(--text);
+    border: 1px solid var(--border);
+    outline: none;
+    cursor: pointer;
+
+    gap: 5px;
+    padding: 12px 16px;
+}
+
+@media (max-width: 512px) {
+    .container {
+        width: 100% !important;
+    }
+
+    .btn{
+        display: block;
+    }
+}

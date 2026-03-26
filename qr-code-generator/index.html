@@ -3,49 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <title>QR-Code Generator</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body class="flex container">
-    <div class="preferences">
-      <input type="color" class="light" value="#fff" />
-      <input type="color" class="dark" />
-      <select name="size" id="size">
-        <option value="100">100x100</option>
-        <option value="200">200x200</option>
-        <option value="300">300x300</option>
-        <option selected value="400">400x400</option>
-        <option value="500">500x500</option>
-        <option value="600">600x600</option>
-        <option value="700">700x700</option>
-        <option value="800">800x800</option>
-        <option value="900">900x900</option>
-      </select>
-    </div>
-    <input
-      type="text"
-      name="qrcode-value"
-      class="qrcode__value"
-      placeholder="Enter QR code value/url"
-    />
-    <img
-      class="qrcode"
-      src="download.svg"
-      alt="qrcode"
-      width="400"
-      height="400"
-    />
-    <div class="buttons">
-      <a href="" class="download">
-        <button class="btn flex">
+  <body>
+    <div class="container flex">
+      <div class="preferences flex">
+        <input type="color" class="light" value="#fff" />
+        <input type="color" class="dark" />
+        <select name="size" class="size">
+          <option value="100">100x100</option>
+          <option value="200">200x200</option>
+          <option selected value="300">300x300</option>
+          <option value="400">400x400</option>
+        </select>
+      </div>
+      <input
+        type="text"
+        name="qrcode-value"
+        class="qrcode__value"
+        placeholder="Enter QR code value/url"
+      />
+      <div class="qrcode flex">
+        <img src="download.svg" />
+      </div>
+      <div class="buttons flex">
+        <a href="#" class="download flex btn">
           <img src="download.svg" width="16" height="16" />
           <span>Download</span>
-        </button>
-      </a>
-      <a href="" class="share">
-        <button class="btn flex">
+        </a>
+        <button class="share btn flex">
           <img src="share.svg" width="16" height="16" />
           <span>Share</span>
         </button>
-      </a>
+      </div>
     </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"
+      integrity="sha512-CNgIRecGo7nphbeZ04Sc13ka07paqdeTu0WR1IM4kNcpmBAUSHSQX0FslNhTDadL4O5SAGapGt4FodqL8My0mA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <!--    <script-->
+    <!--      src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.0.3/qrcode.min.js"-->
+    <!--      integrity="sha512-CwmiQdOoXBchUa3+Eb5brNU8lxeJr7CVjWDwBCr+2wvbTEGzI982TnvGVQtvPKfvSevelLCV2xa7S/pdLKZKag=="-->
+    <!--      crossorigin="anonymous"-->
+    <!--      referrerpolicy="no-referrer"-->
+    <!--    ></script>-->
+    <script src="app.js"></script>
   </body>
 </html>
