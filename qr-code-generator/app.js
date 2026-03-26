@@ -20,11 +20,18 @@ let colorLight = "#fff",
 sizeSelector.addEventListener("change", getSize);
 urlEl.addEventListener("input", getURL);
 shareBtn.addEventListener("click", handleShare);
+downloadBtn.addEventListener("click", async (e) => {
+  e.preventDefault();
+  const dataUrl = await resolveDataUrl();
+  const tempBtn = document.createElement("a");
+  tempBtn.href = dataUrl;
+  tempBtn.download = "QRCode.png";
+  tempBtn.click();
+});
 
 function getURL(event) {
   text = event.target.value;
   if (!text) text = "https://mrgeex.com";
-  downloadBtn.href = text;
   renderQrCode();
   console.log(text);
 }
@@ -71,7 +78,6 @@ async function generateQrCode() {
     colorLight,
     colorDark,
   });
-  downloadBtn.href = await resolveDataUrl();
 }
 
 function resolveDataUrl() {
