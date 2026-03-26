@@ -96,23 +96,18 @@ function resolveDataUrl() {
 }
 
 function timeout() {
-  let id;
-  const promise = new Promise((_, reject) => {
-    id = setTimeout(() => {
-      qrcodeEl.innerHTML = "Error: network timeout!";
+  return new Promise((_, reject) => {
+    setTimeout(() => {
       reject(new Error("timeout"));
     }, 2000);
   });
-  promise.timerID = id;
-  return promise;
 }
 
 async function renderQrCode() {
   try {
-    const timeoutPromise = timeout();
-    await Promise.race([generateQrCode(), timeoutPromise]);
-    clearTimeout(timeoutPromise.timerID);
+    await Promise.race([generateQrCode(), timeout()]);
   } catch (error) {
+    qrcodeEl.innerHTML = "Error: network timeout!";
     console.error(error);
   }
 }
