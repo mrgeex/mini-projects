@@ -22,10 +22,9 @@ img{
 
 .container{
     color: white;
-    /*border: 3px solid white;*/
 
     flex-flow: column;
-    width: 500px !important;
+    width: 500px;
     gap: 15px;
     padding: 8px;
     margin: 15vh auto;
@@ -35,7 +34,6 @@ img{
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100%;
 }
 
 .preferences, .buttons {
@@ -111,14 +109,27 @@ a {
 
     gap: 5px;
     padding: 12px 16px;
+    width: 100%;
 }
 
 @media (max-width: 512px) {
     .container {
         width: 100% !important;
+        margin: 0;
+    }
+}
+
+@media (max-width: 350px) {
+    .preferences{
+        gap: 0;
     }
 
-    .btn{
-        display: block;
+    .qrcode img{
+        width: 100%;
+    }
+
+    .buttons{
+        flex-flow: column;
+        gap: 10px;
     }
 }
